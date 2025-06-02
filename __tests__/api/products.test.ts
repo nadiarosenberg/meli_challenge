@@ -35,16 +35,16 @@ describe('Products API', () => {
   });
 
   test('should exclude product by ID', async () => {
-    const excludeId = '665c946cdd3b4d6b88a2c101';
+    const excludedId = '665c946cdd3b4d6b88a2c101';
     const url = new URL('http://localhost:3000/api/v1/products');
-    url.searchParams.append('excludeId', excludeId);
+    url.searchParams.append('excludedId', excludedId);
     
     const request = new NextRequest(url);
     const response = await GET(request);
     const data = await response.json();
 
     expect(response.status).toBe(200);
-    const hasExcludedProduct = data.products.some((product: any) => product.id === excludeId);
+    const hasExcludedProduct = data.products.some((product: any) => product.id === excludedId);
     expect(hasExcludedProduct).toBe(false);
   });
 });

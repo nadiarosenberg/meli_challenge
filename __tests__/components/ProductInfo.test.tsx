@@ -18,16 +18,16 @@ const mockProduct: Product = {
   soldAmount: 100,
   isNew: true,
   isBestSelling: true,
-  rating: 4.5,
+  rating: 4.8,
   ratingVotes: 200,
   priceConfig: {
     currency: 'USD',
     originalPrice: 499,
     price: 399,
-    discount: 20,
+    discount: 0.1,
     acceptInstallments: true,
-    installmentsAmount: 12,
-    installmentsPrice: 33.25,
+    installmentsAmount: 10,
+    installmentsPrice: 1914.04,
     installmentsInterest: false
   },
   mainImage: 'data:image/png;base64,test',
@@ -40,6 +40,7 @@ const mockProduct: Product = {
   technicalDescription: {
     screenSize: '6.5'
   },
+  freeShipment: true,
   createdAt: new Date(),
   updatedAt: new Date()
 };

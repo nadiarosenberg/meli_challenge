@@ -1,23 +1,31 @@
-import { Product } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { ProductImages } from "../../../../../entities/product/types";
+import { ProductIdInput } from "../../../../../entities/product/schemas";
+import { validateOrThrowSync } from '../../../../../../lib/utils';
+
+function getProductImages(productId: string) : string[] | null {
+  const dataPath = path.join(process.cwd(), "data", "productImages.json");
+  const imagesData = JSON.parse(fs.readFileSync(dataPath, "utf8")) as ProductImages;
+  if(imagesData.productId !== productId) return null
+  return imagesData.images
+}
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ productId: string }> }
+  { params }: { params: { productId: string } }
 ) {
   try {
-    const { productId } = await params;
-    const productDataPath = path.join(process.cwd(), "data", "product.json");
-    const productData = JSON.parse(fs.readFileSync(productDataPath, "utf8")) as Product;
-    if (productData.id !== productId) {
+    const resolvedParams = await params;
+    const parsedParams = validateOrThrowSync(resolvedParams, ProductIdInput)
+    const images = getProductImages(parsedParams.productId)
+    if (!images) {
       return NextResponse.json(
         { error: "Product not found" },
         { status: 404 }
       );
     }
-    const images = Array(8).fill(productData.mainImage);
     return NextResponse.json(images);
   } catch (error) {
     console.error("Error fetching product images:", error);

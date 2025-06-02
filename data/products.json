@@ -1,0 +1,298 @@
+[
+  {
+    "id": "665c946cdd3b4d6b88a2c101",
+    "storeData": {
+      "id": "665c946cdd3b4d6b88a2c001",
+      "name": "Samsung"
+    },
+    "categories": {
+      "mainId": "665c946cdd3b4d6b88a2c002",
+      "mainName": "Tecnología",
+      "secondaryId": "665c946cdd3b4d6b88a2c003",
+      "secondaryName": "Celulares y Telefonia",
+      "tertiaryId": "665c946cdd3b4d6b88a2c008",
+      "tertiaryName": "Celulares y Smartphones",
+      "tertiaryPosition": 2
+    },
+    "title": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
+    "soldAmount": 500,
+    "isNew": true,
+    "isBestSelling": true,
+    "rating": 4.8,
+    "ratingVotes": 795,
+    "priceConfig": {
+      "currency": "USD",
+      "originalPrice": 499,
+      "price": 439,
+      "discount": 0.1,
+      "acceptInstallments": true,
+      "installmentsAmount": 10,
+      "installmentsPrice": 1914.04,
+      "installmentsInterest": false
+    },
+    "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "colors": [
+      {
+        "colorName": "Azul oscuro",
+        "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+      }
+    ],
+    "stock": {
+      "original": 1000,
+      "available": 50
+    },
+    "mainDescription": [
+      "Memoria RAM: 8 GB",
+      "Dispositivo desbloqueado para que elijas tu compañía telefónica preferida.",
+      "Memoria interna de 256 GB."
+    ],
+    "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenido y ejecutará varias aplicaciones al mismo tiempo, sin demoras. Capacidad de almacenamiento ilimitada. Olvidate de borrar. Con su memoria interna de 256 GB podés descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras.",
+    "technicalDescription": {
+      "screenSize": "6.6",
+      "internalMemory": "256 GB",
+      "backCamera": "50 Mpx",
+      "frontCamera": "32 Mpx",
+      "hasNfc": true,
+      "unlockingMethod": "Huella dactilar y reconocimiento facial"
+    },
+    "freeShipment": true,
+    "createdAt": "2025-06-02T00:00:00Z",
+    "updatedAt": "2025-06-02T00:00:00Z"
+  },
+  {
+    "id": "665c946cdd3b4d6b88a2c102",
+    "storeData": {
+      "id": "665c946cdd3b4d6b88a2c001",
+      "name": "Apple"
+    },
+    "categories": {
+      "mainId": "665c946cdd3b4d6b88a2c002",
+      "mainName": "Tecnología",
+      "secondaryId": "665c946cdd3b4d6b88a2c003",
+      "secondaryName": "Celulares y Telefonia",
+      "tertiaryId": "665c946cdd3b4d6b88a2c008",
+      "tertiaryName": "Celulares y Smartphones",
+      "tertiaryPosition": 1
+    },
+    "title": "iPhone 15 Pro Max 256GB Grafito",
+    "soldAmount": 1200,
+    "isNew": false,
+    "isBestSelling": true,
+    "rating": 4.9,
+    "ratingVotes": 2500,
+    "priceConfig": {
+      "currency": "USD",
+      "originalPrice": 1199,
+      "price": 1099,
+      "discount": 0.08,
+      "acceptInstallments": true,
+      "installmentsAmount": 12,
+      "installmentsPrice": 100,
+      "installmentsInterest": false
+    },
+    "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "colors": [
+      {
+        "colorName": "Grafito",
+        "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+      }
+    ],
+    "stock": {
+      "original": 500,
+      "available": 20
+    },
+    "mainDescription": [
+      "Chip A17 Bionic",
+      "Pantalla Super Retina XDR",
+      "Sistema de cámaras Pro"
+    ],
+    "description": "El iPhone 15 Pro Max está diseñado con titanio de calidad aeroespacial, el mismo material que se usa en las naves espaciales. Cuenta con el revolucionario chip A17 Bionic, un botón de acción personalizable y el sistema de cámaras más avanzado en un iPhone.",
+    "technicalDescription": {
+      "screenSize": "6.7",
+      "internalMemory": "256 GB",
+      "backCamera": "48 Mpx",
+      "frontCamera": "12 Mpx",
+      "hasNfc": true,
+      "unlockingMethod": "Face ID"
+    },
+    "freeShipment": true,
+    "createdAt": "2025-06-01T00:00:00Z",
+    "updatedAt": "2025-06-01T00:00:00Z"
+  },
+  {
+    "id": "665c946cdd3b4d6b88a2c103",
+    "storeData": {
+      "id": "665c946cdd3b4d6b88a2c001",
+      "name": "Xiaomi"
+    },
+    "categories": {
+      "mainId": "665c946cdd3b4d6b88a2c002",
+      "mainName": "Tecnología",
+      "secondaryId": "665c946cdd3b4d6b88a2c003",
+      "secondaryName": "Celulares y Telefonia",
+      "tertiaryId": "665c946cdd3b4d6b88a2c008",
+      "tertiaryName": "Celulares y Smartphones",
+      "tertiaryPosition": 3
+    },
+    "title": "Xiaomi Redmi Note 13 Pro+ 5G 512GB Negro",
+    "soldAmount": 800,
+    "isNew": true,
+    "isBestSelling": false,
+    "rating": 4.5,
+    "ratingVotes": 1500,
+    "priceConfig": {
+      "currency": "USD",
+      "originalPrice": 400,
+      "price": 380,
+      "discount": 0.05,
+      "acceptInstallments": true,
+      "installmentsAmount": 6,
+      "installmentsPrice": 63.33,
+      "installmentsInterest": false
+    },
+    "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "colors": [
+      {
+        "colorName": "Negro",
+        "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+      }
+    ],
+    "stock": {
+      "original": 700,
+      "available": 100
+    },
+    "mainDescription": [
+      "Cámara principal de 200 Mpx",
+      "Carga rápida de 120W",
+      "Pantalla AMOLED"
+    ],
+    "description": "El Xiaomi Redmi Note 13 Pro+ 5G ofrece una experiencia visual inmersiva con su pantalla AMOLED y una cámara de 200 Mpx para capturar cada detalle. Su carga ultrarrápida de 120W te permite estar siempre listo.",
+    "technicalDescription": {
+      "screenSize": "6.67",
+      "internalMemory": "512 GB",
+      "backCamera": "200 Mpx",
+      "frontCamera": "16 Mpx",
+      "hasNfc": true,
+      "unlockingMethod": "Huella dactilar"
+    },
+    "freeShipment": true,
+    "createdAt": "2025-05-28T00:00:00Z",
+    "updatedAt": "2025-05-28T00:00:00Z"
+  },
+  {
+    "id": "665c946cdd3b4d6b88a2c104",
+    "storeData": {
+      "id": "665c946cdd3b4d6b88a2c004",
+      "name": "Sony"
+    },
+    "categories": {
+      "mainId": "665c946cdd3b4d6b88a2c002",
+      "mainName": "Tecnología",
+      "secondaryId": "665c946cdd3b4d6b88a2c004",
+      "secondaryName": "Audio y Video",
+      "tertiaryId": "665c946cdd3b4d6b88a2c008",
+      "tertiaryName": "Auriculares",
+      "tertiaryPosition": 5
+    },
+    "title": "Auriculares Inalámbricos Sony WH-1000XM5 con Cancelación de Ruido",
+    "soldAmount": 350,
+    "isNew": true,
+    "isBestSelling": true,
+    "rating": 4.7,
+    "ratingVotes": 600,
+    "priceConfig": {
+      "currency": "USD",
+      "originalPrice": 399,
+      "price": 349,
+      "discount": 0.12,
+      "acceptInstallments": true,
+      "installmentsAmount": 6,
+      "installmentsPrice": 58.17,
+      "installmentsInterest": false
+    },
+    "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "colors": [
+      {
+        "colorName": "Negro",
+        "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+      }
+    ],
+    "stock": {
+      "original": 300,
+      "available": 80
+    },
+    "mainDescription": [
+      "Cancelación de ruido líder en la industria",
+      "Sonido de alta resolución",
+      "Hasta 30 horas de batería"
+    ],
+    "description": "Los auriculares Sony WH-1000XM5 redefinen la escucha sin distracciones y la claridad de las llamadas. Con su cancelación de ruido líder en la industria y un diseño ligero, son perfectos para viajes y el día a día.",
+    "technicalDescription": {
+      "connectivity": "Bluetooth 5.2",
+      "batteryLife": "30 horas",
+      "chargingTime": "3.5 horas",
+      "microphone": "Integrado"
+    },
+    "freeShipment": true,
+    "createdAt": "2025-05-25T00:00:00Z",
+    "updatedAt": "2025-05-25T00:00:00Z"
+  },
+  {
+    "id": "665c946cdd3b4d6b88a2c105",
+    "storeData": {
+      "id": "665c946cdd3b4d6b88a2c005",
+      "name": "HP"
+    },
+    "categories": {
+      "mainId": "665c946cdd3b4d6b88a2c002",
+      "mainName": "Tecnología",
+      "secondaryId": "665c946cdd3b4d6b88a2c005",
+      "secondaryName": "Computación",
+      "tertiaryId": "665c946cdd3b4d6b88a2c010",
+      "tertiaryName": "Notebooks"
+    },
+    "title": "Notebook HP Pavilion 15-eg2000la Intel Core i5 8GB RAM 512GB SSD",
+    "soldAmount": 150,
+    "isNew": false,
+    "isBestSelling": false,
+    "rating": 4.2,
+    "ratingVotes": 300,
+    "priceConfig": {
+      "currency": "USD",
+      "originalPrice": 750,
+      "price": 675,
+      "discount": 0.1,
+      "acceptInstallments": true,
+      "installmentsAmount": 12,
+      "installmentsPrice": 56.25,
+      "installmentsInterest": false
+    },
+    "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "colors": [
+      {
+        "colorName": "Plata",
+        "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+      }
+    ],
+    "stock": {
+      "original": 200,
+      "available": 30
+    },
+    "mainDescription": [
+      "Procesador Intel Core i5",
+      "8 GB de RAM",
+      "512 GB SSD"
+    ],
+    "description": "La Notebook HP Pavilion 15-eg2000la ofrece un equilibrio perfecto entre rendimiento y portabilidad. Ideal para el trabajo y el entretenimiento diario, con un rápido almacenamiento SSD.",
+    "technicalDescription": {
+      "processor": "Intel Core i5-1235U",
+      "ram": "8 GB DDR4",
+      "storage": "512 GB SSD",
+      "screenResolution": "1920x1080",
+      "operatingSystem": "Windows 11 Home"
+    },
+    "freeShipment": true,
+    "createdAt": "2025-05-20T00:00:00Z",
+    "updatedAt": "2025-05-20T00:00:00Z"
+  }
+]
