@@ -2,15 +2,14 @@ import { Suspense } from 'react';
 import { Skeleton } from '../../components/ui/skeleton';
 import { getPaymentMethods, getProduct, getProductImages, getProducts, getStore } from '../../../lib/api';
 import Header from '../../components/ui/header';
-import ProductTechnicalSpecs from '../../components/product/ProductTechnicalSpecs';
 import Description from '../../components/product/Description';
 import ImageGallery from '../../components/product/ImageGallery';
 import ProductInfo from '../../components/product/ProductInfo';
-import BuySection from '../../components/product/BuySection';
-import StoreInfo from '../../components/product/StoreInfo';
 import PaymentMethods from '../../components/product/PaymentMethods';
 import ProductRecommendations from '../../components/product/ProductRecommendations';
+import ProductTechnicalSpecs from '../../components/product/ProductTechnicalSpecs';
 import SponsoredProducts from '../../components/product/SponsoredProducts';
+import PurchaseInfo from '../../components/product/PurchaseInfo';
 
 function LoadingProductInfo() {
   return (
@@ -66,11 +65,10 @@ async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
             </span>
           </div>
   
-          {/* Main layout: izquierda (galería + info + specs) y derecha (buy section) */}
           <div className="flex flex-col lg:flex-row gap-6 bg-white shadow-lg p-4 rounded">
-            {/* Columna izquierda */}
+            {/* Left section */}
             <div className="flex-1 flex flex-col gap-6">
-              {/* Galería e Info del producto */}
+              {/* Gallery and product info */}
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="flex-1">
                   <ImageGallery images={images} mainImage={product.mainImage} />
@@ -82,7 +80,7 @@ async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
                 </div>
               </div>
   
-              {/* Recomendaciones, Specs, Descripción */}
+              {/* Recommendations, Specs, Description */}
               <ProductRecommendations
                 relatedProducts={relatedProducts.results}
                 storeProducts={storeProducts.results}
@@ -95,10 +93,9 @@ async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
               </div>
             </div>
   
-            {/* Columna derecha */}
+            {/* Right column */}
             <div className="w-full lg:w-80 flex flex-col gap-4">
-              <BuySection />
-              <StoreInfo store={store} />
+              <PurchaseInfo store={store} product={product} />
               <PaymentMethods paymentMethods={paymentMethods} />
               <SponsoredProducts products={relatedProducts.results}/>
             </div>

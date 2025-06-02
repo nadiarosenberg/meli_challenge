@@ -9,9 +9,20 @@ interface StoreInfoProps {
 
 export default function StoreInfo({ store }: StoreInfoProps) {
   return (
-    <div className="border rounded-lg p-4">
-      <div className="flex items-center gap-2 mb-4">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden">
+    <div className="border rounded-lg overflow-hidden">
+      {/* Banner */}
+      <div className="relative h-24 bg-gray-200">
+        <Image
+          src={store.bannerImage}
+          alt="Banner de tienda"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Profile */}
+      <div className="relative px-4 pb-4 bg-white">
+        <div className="absolute -top-6 left-4 w-16 h-16 rounded-md overflow-hidden border-2 border-white shadow-md bg-white">
           <Image
             src={store.profileImage}
             alt={store.name}
@@ -19,31 +30,45 @@ export default function StoreInfo({ store }: StoreInfoProps) {
             className="object-cover"
           />
         </div>
-        <div>
-          <h3 className="font-medium">{store.name}</h3>
+
+        <div className="pl-20 pt-2">
+          <h3 className="text-base font-medium">{store.name}</h3>
+
           {store.isOfficialStore && (
-            <div className="flex items-center text-sm text-green-600">
-              <Check className="w-4 h-4 mr-1" />
-              <span>Tienda oficial</span>
+            <div className="mt-1 flex items-center text-sm text-gray-600">
+              <div className="bg-blue-600 text-white rounded-full p-1 mr-2">
+                <Check className="w-3 h-3" />
+              </div>
+              Tienda oficial de Mercado Libre
             </div>
           )}
+
+          <div className="text-sm mt-2 text-gray-800">
+            <strong>+{store.sellsAmount}</strong> vendidos
+          </div>
         </div>
       </div>
-      
-      <div className="space-y-2 text-sm">
-        <div className="flex justify-between">
-          <span className="text-gray-700">Productos</span>
-          <span>{store.productAmount}</span>
+
+      {/* Sells info */}
+        <div className="bg-gray-50 border-t text-sm text-gray-700 flex divide-x divide-gray-300 mt-2">
+          <div className="flex-1 px-4 py-2">
+            <span className="block text-gray-500">Productos</span>
+            <span className="font-medium">{store.productAmount}</span>
+          </div>
+          <div className="flex-1 px-4 py-2">
+            <span className="block text-gray-500">Ventas</span>
+            <span className="font-medium">+{store.sellsAmount}</span>
+          </div>
+          <div className="flex-1 px-4 py-2">
+            <span className="block text-gray-500">Entrega a tiempo</span>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-700">Ventas</span>
-          <span>+{store.sellsAmount}</span>
-        </div>
+        <div className="px-4 pt-2 pb-4 bg-white border-t text-sm text-gray-700 flex justify-between">
         <a
           href={store.storeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full text-center bg-blue-100 text-blue-700 py-2 rounded-md mt-4"
+          className="self-end w-full text-center bg-blue-100 text-blue-700 py-2 rounded-md mt-2"
         >
           Ir a la tienda oficial
         </a>
