@@ -1,0 +1,552 @@
+openapi: 3.0.0
+info:
+  title: MercadoLibre Challenge API
+  description: API for the MercadoLibre product detail page challenge
+  version: 1.0.0
+servers:
+  - url: /api/v1
+    description: API Base URL
+paths:
+  /products:
+    get:
+      summary: Get product list
+      description: Gets a paginated list of products, accepts optional filters
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+          description: Number of items per page
+        - name: storeId
+          in: query
+          schema:
+            type: string
+            example: 60f7c0b6d5f3a2e4b1e8c7a4
+          description: Store ID to filter products
+        - name: secondaryCategoryId
+          in: query
+          schema:
+            type: string
+            example: 665c946cdd3b4d6b88a2c003
+          description: Secondary category ID to filter products
+        - name: excludeId
+          in: query
+          schema:
+            type: string
+            example: 665c946cdd3b4d6b88a2c101
+          description: Product ID to exclude from results
+      responses:
+        '200':
+          description: Paginated list of products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid limit
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
+                    
+  /products/{productId}:
+    get:
+      summary: Get product details
+      description: Gets all product information by product ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the product
+      responses:
+        '200':
+          description: Detailed product information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid ID
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Product not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
+  
+  /products/{productId}/images:
+    get:
+      summary: Get product images
+      description: Gets all images of a specific product by product ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        '200':
+          description: List of product images in base64
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+                  description: Image in base64 format
+                  example: 
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid ID
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Product not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
+  
+  /products/{productId}/payment-methods:
+    get:
+      summary: Get product payment methods
+      description: Gets available payment methods for a specific product by product ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        '200':
+          description: Available payment methods
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPaymentMethods'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid ID
+        '404':
+          description: Payment methods not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Payment methods not found for this product
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
+  /stores/{storeId}:
+    get:
+      summary: Get store information
+      description: Gets store information by store ID
+      parameters:
+        - name: storeId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Store ID
+      responses:
+        '200':
+          description: Store information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Store'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid ID
+        '404':
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Store not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Product ID (MongoDB ObjectId)
+          example: 665c946cdd3b4d6b88a2c101
+        storeData:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Store ID
+              example: 60f7c0b6d5f3a2e4b1e8c7a4
+            name:
+              type: string
+              description: Store name
+              example: Samsung
+        categories:
+          type: object
+          properties:
+            mainId:
+              type: string
+              description: Main category ID
+              example: 665c946cdd3b4d6b88a2c002
+            mainName:
+              type: string
+              description: Main category name
+              example: Tecnologia
+            secondaryId:
+              type: string
+              description: Secondary category ID
+              example: 665c946cdd3b4d6b88a2c003
+            secondaryName:
+              type: string
+              description: Secondary category name
+              example: Celulares y smartphones
+            secondaryPosition:
+              type: integer
+              description: Secondary category position
+              example: 2
+        title:
+          type: string
+          description: Product title
+          example: Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM
+        soldAmount:
+          type: integer
+          description: Number of product units sold
+          example: 500
+        isNew:
+          type: boolean
+          description: Indicates if the product is new
+          example: true
+        isBestSelling:
+          type: boolean
+          description: Indicates if the product is best selling
+          example: true
+        rating:
+          type: number
+          format: float
+          description: Product rating (0-5)
+          example: 4.8
+        ratingVotes:
+          type: integer
+          description: Number of rating votes
+          example: 769
+        priceConfig:
+          type: object
+          properties:
+            currency:
+              type: string
+              enum:
+                - USD
+                - ARS
+              description: Price currency
+              example: USD
+            originalPrice:
+              type: number
+              format: float
+              description: Original price
+              example: 499
+            price:
+              type: number
+              format: float
+              description: Current price
+              example: 439
+            discount:
+              type: number
+              format: float
+              description: Discount percentage in base 1
+              example: 0.1
+            acceptInstallments:
+              type: boolean
+              description: Indicates if installments are accepted
+              example: true
+            installmentsAmount:
+              type: integer
+              description: Number of installments
+              example: 10
+            installmentsPrice:
+              type: number
+              format: float
+              description: Price per installment
+              example: 1914.08
+            installmentsInterest:
+              type: boolean
+              description: Indicates if installments have interest
+              example: false
+        colors:
+          type: array
+          items:
+            type: object
+            properties:
+              colorName:
+                type: string
+                description: Color name
+                example: "Red"
+              productImage:
+                type: string
+                format: byte
+                description: Product image in that color (base64)
+                example: "iVBORw0KGgoAAAANSUhEUgAAA..."
+        mainImage:
+          type: string
+          format: byte
+          description: Main product image (base64)
+          example: "iVBORw0KGgoAAAANSUhEUgAAA..."
+        stock:
+          type: object
+          properties:
+            original:
+              type: integer
+              description: Original stock
+              example: 1000
+            available:
+              type: integer
+              description: Available stock
+              example: 50
+        mainDescription:
+          type: array
+          items:
+            type: string
+            example: "RAM 256"
+          description: Main description points
+        description:
+          type: string
+          description: Full product description
+          example: "Con su memoria interna de 256 GB podés descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras."
+        technicalDescription:
+          type: object
+          properties:
+            screenSize:
+              type: string
+              description: Screen size
+              example: "6.6"
+            internalMemory:
+              type: string
+              description: Internal memory
+              example: "256 GB"
+            backCamera:
+              type: string
+              description: Back camera
+              example: 50 Mpx
+            frontCamera:
+              type: string
+              description: Front camera
+              example: 32 Mpx
+            hasNfc:
+              type: boolean
+              description: Indicates if has NFC
+              example: true
+            unlockingMethod:
+              type: string
+              description: Unlocking method
+              example: "Huella dactilar y reconocimiento facial"
+    Store:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Store ID (MongoDB ObjectId)
+          example: 60f7c0b6d5f3a2e4b1e8c7a4
+        name:
+          type: string
+          description: Store name
+          example: Samsung
+        profileImage:
+          type: string
+          format: byte
+          description: Store profile image (base64)
+          example: "iVBORw0KGgoAAAANSUhEUgAAA..."
+        bannerImage:
+          type: string
+          format: byte
+          description: Store banner image (base64)
+          example: "iVBORw0KGgoAAAANSUhEUgAAA..."
+        isOfficialStore:
+          type: boolean
+          description: Indicates if it is an official store
+          example: true
+        productAmount:
+          type: integer
+          description: Number of products
+          example: 50
+        sellsAmount:
+          type: integer
+          description: Number of sales
+          example: 5000
+        storeUrl:
+          type: string
+          format: uri
+          description: Store URL
+          example: "https://www.mercadolibre.com.ar/tienda/samsung"
+    PaymentMethod:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - creditCard
+            - debitCard
+            - cash
+            - wallet
+            - bankTransfer
+          description: Type of payment method
+        method:
+          type: string
+          enum:
+            - visa
+            - mastercard
+            - amex
+            - oca
+            - rapipago
+            - pagofacil
+            - mercadopago
+            - uala
+          description: Name of payment method
+        installments:
+          type: integer
+          description: Number of available installments
+        installmentsInterest:
+          type: boolean
+          description: Indicates if installments have interest
+          
+    ProductPaymentMethods:
+      type: object
+      properties:
+        productId:
+          type: string
+          description: Product ID
+          example: 665c946cdd3b4d6b88a2c101
+        methods:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentMethod'
+    ProductsResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+        limit:
+          type: integer
+          description: Number of products per page
+          example: 1
+        total:
+          type: integer
+          description: Total products
+          example: 2
+        totalPages:
+          type: integer
+          description: Total pages
+          example: 2
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
