@@ -1,0 +1,41 @@
+{
+  "productId": "665c946cdd3b4d6b88a2c101",
+  "methods": [
+    {
+      "type": "creditCard",
+      "method": "visa",
+      "installments": 6,
+      "installmentsInterest": true
+    },
+    {
+      "type": "creditCard",
+      "method": "mastercard",
+      "installments": 3,
+      "installmentsInterest": false
+    },
+    {
+      "type": "creditCard",
+      "method": "amex"
+    },
+    {
+      "type": "debitCard",
+      "method": "visa"
+    },
+    {
+      "type": "debitCard",
+      "method": "mastercard"
+    },
+    {
+      "type": "cash",
+      "method": "rapipago"
+    },
+    {
+      "type": "cash",
+      "method": "pagofacil"
+    },
+    {
+      "type": "wallet",
+      "method": "mercadopago"
+    }
+  ]
+}

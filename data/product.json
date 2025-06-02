@@ -1,0 +1,65 @@
+{
+  "id": "665c946cdd3b4d6b88a2c101",
+  "storeData": {
+    "id": "665c946cdd3b4d6b88a2c001",
+    "name": "Samsung"
+  },
+  "categories": {
+    "mainId": "665c946cdd3b4d6b88a2c002",
+    "mainName": "Tecnología",
+    "secondaryId": "665c946cdd3b4d6b88a2c003",
+    "secondaryName": "Celulares y Smartphones",
+    "secondaryPosition": 2
+  },
+  "title": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
+  "soldAmount": 500,
+  "isNew": true,
+  "isBestSelling": true,
+  "rating": 4.8,
+  "ratingVotes": 795,
+  "priceConfig": {
+    "currency": "USD",
+    "originalPrice": 499,
+    "price": 439,
+    "discount": 12.0,
+    "acceptInstallments": true,
+    "installmentsAmount": 10,
+    "installmentsPrice": 191.41,
+    "installmentsInterest": false
+  },
+  "mainImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+  "colors": [
+    {
+      "colorName": "Azul oscuro",
+      "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+    },
+    {
+      "colorName": "Negro",
+      "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+    },
+    {
+      "colorName": "Blanco",
+      "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+    }
+  ],
+  "stock": {
+    "original": 1000,
+    "available": 50
+  },
+  "mainDescription": [
+    "Memoria RAM: 8 GB",
+    "Dispositivo desbloqueado para que elijas tu compañía telefónica preferida.",
+    "Memoria interna de 256 GB."
+  ],
+  "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenido y ejecutará varias aplicaciones al mismo tiempo, sin demoras. Capacidad de almacenamiento ilimitada. Olvidate de borrar. Con su memoria interna de 256 GB podés descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras.",
+  "technicalDescription": {
+    "screenSize": "6.6",
+    "internalMemory": "256 GB",
+    "backCamera": "50 Mpx",
+    "frontCamera": "32 Mpx",
+    "hasNfc": true,
+    "unlockingMethod": "Huella dactilar y reconocimiento facial"
+  },
+  "createdAt": "2025-06-02T00:00:00Z",
+  "updatedAt": "2025-06-02T00:00:00Z"
+}
