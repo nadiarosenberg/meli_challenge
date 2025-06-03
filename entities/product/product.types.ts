@@ -68,7 +68,7 @@ export type PaginationInput = {
   limit: number,
   storeId?: string,
   excludedId?: string,
-  tertiaryId?: string
+  tertiaryCategoryId?: string
 }
 
 export type ProductImages = {

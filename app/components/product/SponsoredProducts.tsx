@@ -1,5 +1,5 @@
 'use client';
-import { Product } from '../../entities/product/types';
+import { Product } from '../../../entities/product/product.types';
 import ProductCard from './ProductCard';
 
 interface SponsoredProductsProps {

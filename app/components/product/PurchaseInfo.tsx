@@ -4,8 +4,8 @@ import { Button } from "../ui/button";
 import { ShoppingCart, CreditCard, RotateCcw, Shield, Headphones } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { Store } from "../../entities/store/types";
-import { Product } from "../../entities/product/types";
+import { Store } from "../../../entities/store/store.types";
+import { Product } from "../../../entities/product/product.types";
 
 interface PurchaseInfoProps {
   store: Store,

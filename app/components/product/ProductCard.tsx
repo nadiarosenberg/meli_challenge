@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { mapCurrency } from '../../../lib/utils';
-import { Product } from '../../entities/product/types'
+import { Product } from '../../../entities/product/product.types';
 
 interface ProductCardProps {
   product: Product

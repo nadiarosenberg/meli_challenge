@@ -11,14 +11,16 @@ const customJestConfig = {
     '^@/(.*)$': '<rootDir>/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
+  testPathIgnorePatterns: [
+    '/mocks'
+  ],
   collectCoverage: true,
+  coveragePathIgnorePatterns: [
+    'app/components/ui'
+  ],
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
-    'components/**/*.{ts,tsx}',
-    'lib/**/*.{ts,tsx}',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
-    '!**/.next/**',
+    'lib/services/*.{ts,tsx}',
   ],
   coverageThreshold: {
     global: {

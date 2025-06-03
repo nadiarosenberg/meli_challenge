@@ -1,17 +1,8 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import { Store } from "../../../../entities/store/types";
-import { StoreIdInput } from "../../../../entities/store/schemas";
-import { validateOrThrowSync } from "../../../../../lib/utils";
-
-function getStoreById(storeId: string) : Store | null {
-  const dataPath = path.join(process.cwd(), "data", "store.json");
-  const storeData = JSON.parse(fs.readFileSync(dataPath, "utf8")) as Store;
-  if(storeData.id !== storeId) return null
-  return storeData
-}
+import { parseError, validateOrThrowSync } from "../../../../../lib/utils";
+import { getStoreById } from "../../../../../lib/services/store.service";
+import { StoreIdInput } from "../../../../../entities/store/store.schemas";
 
 export async function GET(
   request: NextRequest,
@@ -19,7 +10,7 @@ export async function GET(
 ) {
   try {
     const resolvedParams = await params;
-    const parsedParams = validateOrThrowSync(resolvedParams, StoreIdInput)
+    const parsedParams = validateOrThrowSync<{storeId: string}>(resolvedParams, StoreIdInput)
     const store = getStoreById(parsedParams.storeId)
     if (!store) {
       return NextResponse.json(
@@ -28,11 +19,8 @@ export async function GET(
       );
     }
     return NextResponse.json(store);
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching store:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return parseError(error)
   }
 }

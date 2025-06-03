@@ -38,7 +38,7 @@ async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const store = await getStore(product.storeData.id);
 
   const relatedProducts = await getProducts({
-    tertiaryId: product.categories.tertiaryId,
+    tertiaryCategoryId: product.categories.tertiaryId,
     excludedId: productId,
     limit: 3
   });

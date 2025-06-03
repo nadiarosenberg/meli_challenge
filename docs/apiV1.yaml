@@ -30,7 +30,7 @@ paths:
             type: string
             example: 60f7c0b6d5f3a2e4b1e8c7a4
           description: Store ID to filter products
-        - name: tertiaryId
+        - name: tertiaryCategoryId
           in: query
           schema:
             type: string
@@ -58,7 +58,7 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Invalid limit
+                    example: Invalid input
         '500':
           description: Internal server error
           content:
@@ -97,7 +97,7 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Invalid ID
+                    example: Invalid input
         '404':
           description: Product not found
           content:
@@ -136,12 +136,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
-                  format: byte
-                  description: Image in base64 format
-                  example: 
+               $ref: '#/components/schemas/ProductImages'
         '400':
           description: Bad request
           content:
@@ -151,7 +146,7 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Invalid ID
+                    example: Invalid input
         '404':
           description: Product not found
           content:
@@ -200,9 +195,9 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Invalid ID
+                    example: Invalid input
         '404':
-          description: Payment methods not found
+          description: Product not found
           content:
             application/json:
               schema:
@@ -210,7 +205,7 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Payment methods not found for this product
+                    example: Product not found
         '500':
           description: Internal server error
           content:
@@ -248,7 +243,7 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: Invalid ID
+                    example: Invalid input
         '404':
           description: Store not found
           content:
@@ -531,6 +526,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PaymentMethod'
+    ProductImages:
+      type: object
+      properties:
+        productId:
+          type: string
+          description: product ID
+          example: 665c946cdd3b4d6b88a2c101
+        images:
+          type: array
+          items:
+            type: string
+            description: Image in base64 format
+            example: "iVBORw0KGgoAAAANSUhEUgAAA..."
     PaginatedProducts:
       type: object
       properties:

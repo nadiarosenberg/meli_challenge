@@ -50,12 +50,11 @@ npm test -- --coverage
 
 - `/app` - Routes and Next.js pages (App Router)
 - `/app/api` - API endpoints with Next.js API Routes
-- `/components` - React components
+- `/app/components` - React components
+- `/docs` - API documentation
+- `/entities` - Shared Typescript and Joi definitions
 - `/data` - JSON files used as a mocked database
-- `/lib` - Shared utilities 
-- `/types` - Typescript definitions
+- `/lib/services` - Services (business logic)
+- `/lib/utils` - Shared utilities 
 - `/__tests__` - Unit tests
   
-## API Docs
-
-Documentation is available at the route `/api/v1/docs`

@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
-import { Store } from '../../entities/store/types';
+import { Store } from '../../../entities/store/store.types';
 
 interface StoreInfoProps {
   store: Store;

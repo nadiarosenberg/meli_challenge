@@ -1,29 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import { Product, PaginatedProducts, PaginationInput } from "../../../entities/product/types";
-import { GetProductsInput } from "../../../entities/product/schemas";
-import { validateOrThrowSync } from "../../../../lib/utils";
+import { parseError, validateOrThrowSync } from "../../../../lib/utils";
+import { getAndFilterProducts } from "../../../../lib/services/product.service";
+import { PaginationInput } from "../../../../entities/product/product.types";
+import { GetProductsInput } from "../../../../entities/product/product.schemas";
 
-function getAndFilterProducts(params: PaginationInput) : PaginatedProducts {
-  const dataPath = path.join(process.cwd(), "data", "products.json");
-  const productData = JSON.parse(fs.readFileSync(dataPath, "utf8")) as Product[];
-  const products = productData.filter((product) => {
-    if (params.storeId && product.storeData.id !== params.storeId) return false
-    if (params.tertiaryId && product.categories.tertiaryId !== params.tertiaryId) return false
-    if(params.excludedId && product.id === params.excludedId) return false
-    return true
-  });
-  const totalProducts = products.length
-  const totalPages = Math.ceil(totalProducts / params.limit)
-  return {
-    page: params.page,
-    limit: params.limit,
-    total: totalProducts,
-    totalPages,
-    results: products.slice(0, params.limit)
-  }
-}
 
 export async function GET(request: NextRequest) {
   try {
@@ -31,13 +11,13 @@ export async function GET(request: NextRequest) {
     const page = params.get("page");
     const limit = params.get("limit");
     const storeId = params.get("storeId");
-    const tertiaryId = params.get("tertiaryId");
+    const tertiaryCategoryId = params.get("tertiaryCategoryId");
     const excludedId = params.get("excludedId");
-    const parsedParams = validateOrThrowSync({page, limit, storeId, tertiaryId, excludedId}, GetProductsInput)
+    const parsedParams = validateOrThrowSync<PaginationInput>({page, limit, storeId, tertiaryCategoryId, excludedId}, GetProductsInput)
     const products = getAndFilterProducts(parsedParams)
     return NextResponse.json(products);
   } catch (error) {
     console.error("Error fetching products:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return parseError(error)
   }
 }

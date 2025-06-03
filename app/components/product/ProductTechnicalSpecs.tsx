@@ -1,5 +1,4 @@
 'use client';
-import { Product } from "../../entities/product/types";
 
 interface TechnicalSpecsProps {
   product: Product;
@@ -14,6 +13,7 @@ import {
   Nfc,
   Lock,
 } from 'lucide-react';
+import { Product } from '../../../entities/product/product.types';
 
 export default function ProductTechnicalSpecs({ product }: TechnicalSpecsProps) {
   const { technicalDescription } = product;

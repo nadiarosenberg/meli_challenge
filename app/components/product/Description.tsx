@@ -1,5 +1,6 @@
 'use client';
-import { Product } from "../../entities/product/types";
+
+import { Product } from "../../../entities/product/product.types";
 
 interface DescriptionProps {
   product: Product;

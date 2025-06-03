@@ -10,7 +10,7 @@ import {
 import { SiMercadopago, SiOclif } from 'react-icons/si';
 import { PiBankFill, PiWalletFill } from 'react-icons/pi';
 import { CreditCard, Banknote } from 'lucide-react';
-import { ProductPaymentMethods } from '../../entities/paymentMethods/types';
+import { ProductPaymentMethods } from '../../../entities/paymentMethods/paymentMethods.types';
 
 interface PaymentMethodsProps {
   paymentMethods: ProductPaymentMethods;
