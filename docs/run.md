@@ -12,8 +12,8 @@ This guide explains how to set up and run the **MercadoLibre Challenge** project
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/nadiarosenberg/mercadolibre-challenge.git
-cd mercadolibre-challenge
+git clone https://github.com/nadiarosenberg/meli_challenge.git
+cd meli_challenge
 ```
 
 2. Install dependencies:
@@ -34,16 +34,10 @@ The server will run at http://localhost:3000
 
 ## Testing
 
-To run unit tests:
+To run unit test:
 
 ```bash
-npm test
-```
-
-To view test coverage:
-
-```bash
-npm test -- --coverage
+npm run test
 ```
 
 ## Project structure
